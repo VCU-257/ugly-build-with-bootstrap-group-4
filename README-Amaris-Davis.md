@@ -1,19 +1,20 @@
 # Student Name: Amaris Davis
 
 ## 1. My Assigned Work
-*List the specific HTML files, screens, or components you built based on your team's assignments in Table 3.*
+Create the responsive Navbar (hamburger menu for mobile).
 
 ## 2. Bootstrap Implementation
-*Briefly explain the standard components you used for your assigned areas. [cite_start]Did you stick to the plan from Table 1?*
-* **Components Used:** *(e.g., Bootstrap Navbar, Cards, Form Controls, Tables)*
+*I stuck mostly to our inital plan for the navbar implementation. 
+I used Bootstrap Navbar to create a responsive navigation bar with a hamburger menu for our mobile app. Then I used the collapse component to enable the hamburger menu functionality allowing for a dropdown menu when the hamburger button is clicked. 
+* **Components Used:** Bootstrap Navbar
 
 ## 3. Technical Challenges & Solutions
-[cite_start]*Look back at Table 4: Technical Risks. Did you build any of those risky components? How did you solve the challenge? If you didn't face those specific risks, what was the hardest part of your assigned work?*
+- My job wasn't to build any of the risky components so I didn't however, the only technical diffficulty I faced was, 
 
 ## 4. AI / LLM Usage
 *Did you use an AI tool to help write or debug your code?*
-* **What I asked the AI:** *(e.g., "How do I make a sticky footer in Bootstrap 5?")*
-* **How it helped & What I learned:** *(Explain the solution it provided and how you ensured you understood the code).*
+* **What I asked the AI: Is there any typos witin my code right now (I was having issues with the navbar showing the hamburger menu image and the dropdown menu wasn't working properly)
+* **How it helped & What I learned: Didn't really necessarily learn much, I realized I kept spelling the classes for these navbar elements wrong. The ChatBot pointed out my spelling inconsistencies and the navbar was working like normal.
 
 ## 5. Live Site Link
 *Provide the GitHub Pages link to the specific page(s) you built.*

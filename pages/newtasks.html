@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+         /* Main app container (centered box like a mobile app) */
         .app-container { 
             max-width: 400px; 
-            margin: 0 auto; 
+            margin: 0 auto;  /* Centers horizontally */
             border: 1px solid #ddd; 
             min-height: 100vh; 
             background: #fff; 
@@ -17,24 +18,26 @@
             border: none; 
             height: 50px; 
         }
+         /* Placeholder box for an icon */
         .icon-box { 
             width: 50px; 
             height: 50px; 
             background-color: #d3d3d3; 
         }
-       
+       /* Custom light gray button */
         .btn-light-grey {
             background-color: #d9d9d9;
             border: none;
             color: #333;
         }
+         /* Darker gray when hovering over button */
         .btn-light-grey:hover {
             background-color: #cccccc;
         }
     </style>
 </head>
 <body class="bg-light">
-
+<!-- Main app container -->
 <div class="app-container d-flex flex-column">
     
     <div class="p-4">
@@ -42,18 +45,19 @@
             <div class="icon-box me-3"></div>
             <h4 class="mb-0 fw-bold">ADD NEW TASK</h4>
         </div>
-
+ <!-- Form starts here -->
         <form>
+             <!-- Task Name input -->
             <div class="mb-4">
                 <label class="form-label small fw-bold">Task Name:</label>
                 <input type="text" class="form-control form-input-gray">
             </div>
-            
+            <!-- Due Date input -->
             <div class="mb-4">
                 <label class="form-label small fw-bold">Due Date:</label>
                 <input type="date" class="form-control form-input-gray">
             </div>
-
+            <!-- Priority dropdown -->
             <div class="mb-5">
                 <label class="form-label small fw-bold">Priority</label>
                 <select class="form-select form-input-gray">
@@ -63,10 +67,11 @@
                     <option value="3">High</option>
                 </select>
             </div>
-
+             <!-- Buttons section -->
             <div class="d-grid gap-3 justify-content-center text-center">
+                 <!-- Submit button (submits the form) -->
                 <button type="submit" class="btn btn-secondary px-5 py-2">Submit</button>
-                
+                 <!-- Cancel button (does nothing yet) -->
                 <button type="button" class="btn btn-light-grey px-5 py-2">cancel</button>
             </div>
         </form>

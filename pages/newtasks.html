@@ -7,12 +7,21 @@
     <style>
          /* Main app container (centered box like a mobile app) */
         .app-container { 
-            max-width: 400px; 
-            margin: 0 auto;  /* Centers horizontally */
+            width: 100%;           /* Added: Full width on mobile */
+            max-width: 450px;      /* Updated: slightly wider for better desktop flow */
+            margin: 0 auto;        /* Centers horizontally */
             border: 1px solid #ddd; 
             min-height: 100vh; 
             background: #fff; 
         }
+
+        /* Responsive: Removes border on small screens for a seamless mobile look */
+        @media (max-width: 576px) {
+            .app-container {
+                border: none;
+            }
+        }
+
         .form-input-gray { 
             background-color: #e9ecef; 
             border: none; 
@@ -23,6 +32,7 @@
             width: 50px; 
             height: 50px; 
             background-color: #d3d3d3; 
+            flex-shrink: 0;         /* Added: prevents icon from squishing on tiny screens */
         }
        /* Custom light gray button */
         .btn-light-grey {
@@ -37,7 +47,6 @@
     </style>
 </head>
 <body class="bg-light">
-<!-- Main app container -->
 <div class="app-container d-flex flex-column">
     
     <div class="p-4">
@@ -45,24 +54,19 @@
             <div class="icon-box me-3"></div>
             <h4 class="mb-0 fw-bold">ADD NEW TASK</h4>
         </div>
- <!-- Form starts here -->
-
-    <div class="alert alert-danger d-none" role="alert">
+ <div class="alert alert-danger d-none" role="alert">
     Please fill out all required fields correctly.
     </div>
 
         <form>
-             <!-- Task Name input -->
-            <div class="mb-4">
+             <div class="mb-4">
                 <label class="form-label small fw-bold">Task Name:</label>
                 <input type="text" class="form-control form-input-gray">
             </div>
-            <!-- Due Date input -->
             <div class="mb-4">
                 <label class="form-label small fw-bold">Due Date:</label>
                 <input type="date" class="form-control form-input-gray">
             </div>
-            <!-- Priority dropdown -->
             <div class="mb-5">
                 <label class="form-label small fw-bold">Priority</label>
                 <select class="form-select form-input-gray">
@@ -72,12 +76,9 @@
                     <option value="3">High</option>
                 </select>
             </div>
-             <!-- Buttons section -->
-            <div class="d-grid gap-3 justify-content-center text-center">
-                 <!-- Submit button (submits the form) -->
-                <button type="submit" class="btn btn-secondary px-5 py-2">Submit</button>
-                 <!-- Cancel button (does nothing yet) -->
-                <button type="button" class="btn btn-light-grey px-5 py-2">cancel</button>
+             <div class="d-grid gap-3 text-center">
+                 <button type="submit" class="btn btn-secondary py-2 w-100">Submit</button>
+                 <button type="button" class="btn btn-light-grey py-2 w-100">cancel</button>
             </div>
         </form>
     </div>

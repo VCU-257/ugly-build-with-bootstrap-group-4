@@ -24,4 +24,5 @@ Another challenge was making sure page links worked correctly across the folder 
 
 ## 5. Live Site Link
 **Live URL:** [Insert GitHub Pages link here]
-* **Live URL:** https://github.com/VCU-257/ugly-build-with-bootstrap-group-4.git
+* **Live URL:** https://vcu-257.github.io/ugly-build-with-bootstrap-group-4/pages/profile.html
+https://vcu-257.github.io/ugly-build-with-bootstrap-group-4/pages/setting.html 

@@ -9,7 +9,16 @@
 
 <body class="p-4">
 
-    <h3>Homepage</h3>
+    <!-- Navbar -->
+    <div id="navbar">
+        <script>
+            fetch("pages/navigation/navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+            });
+        </script>
+    </div>
 
     <!-- YOUR PART (small and clear) -->
     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">

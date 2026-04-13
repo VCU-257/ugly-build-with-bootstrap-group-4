@@ -1,20 +1,27 @@
 # Student Name: Arushi Chaturvedi
 
+# Student Name: Arushi Chaturvedi
+
 ## 1. My Assigned Work
-*List the specific HTML files, screens, or components you built based on your team's assignments in Table 3.*
+I was assigned the Profile & Settings Screen for Flow B. My responsibilities were to implement the user profile layout, the logout button, and the back navigation. I worked on `pages/profile.html`, `pages/setting.html`, and made sure they connected properly with the shared navigation layout.
 
 ## 2. Bootstrap Implementation
-*Briefly explain the standard components you used for your assigned areas. [cite_start]Did you stick to the plan from Table 1?*
-* **Components Used:** *(e.g., Bootstrap Navbar, Cards, Form Controls, Tables)*
+I used Bootstrap components that matched our GA 7 component mapping. For my assigned screens, I focused on the profile layout and navigation actions using standard Bootstrap classes.
+
+**Components Used:** Bootstrap Navbar, Card, Buttons, Modal, Form Controls, Grid, Container
+
+I stayed close to the plan from Table 1 by using Bootstrap buttons for back and logout navigation, and by keeping the layout responsive for both mobile and desktop.
 
 ## 3. Technical Challenges & Solutions
-[cite_start]*Look back at Table 4: Technical Risks. Did you build any of those risky components? How did you solve the challenge? If you didn't face those specific risks, what was the hardest part of your assigned work?*
+One challenge was making sure the profile and settings pages stayed responsive while still fitting into the shared team layout. I used Bootstrap grid classes like `col-12`, `col-md-8`, and `col-lg-6` so the content stacks well on mobile and becomes more centered on larger screens.
+
+Another challenge was making sure page links worked correctly across the folder structure. Since the project uses a shared navbar file inside a nested folder, I had to make sure the relative paths for Home, Profile, Settings, and Tasks were correct.
 
 ## 4. AI / LLM Usage
-*Did you use an AI tool to help write or debug your code?*
-* **What I asked the AI:** *(e.g., "How do I make a sticky footer in Bootstrap 5?")*
-* **How it helped & What I learned:** *(Explain the solution it provided and how you ensured you understood the code).*
+**What I asked the AI:** I used AI to help me understand my code better and to help me debug issues when something was not working as expected.
+
+**How it helped & What I learned:** AI helped explain the purpose of different Bootstrap classes and how my HTML structure was working. It also helped me find and fix bugs, especially with layout and navigation. I did not just copy the code directly. I reviewed it and made sure I understood what it was doing before using it in my project.
 
 ## 5. Live Site Link
-*Provide the GitHub Pages link to the specific page(s) you built.*
-* **Live URL:** [Insert Link Here]
+**Live URL:** [Insert GitHub Pages link here]
+* **Live URL:** https://github.com/VCU-257/ugly-build-with-bootstrap-group-4.git

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div id="navbar"></div>
+
+    <script>
+        fetch("./navigation/navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+            });
+    </script>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header text-center fw-bold">
+                        PROFILE
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/120"
+                             alt="Profile Picture"
+                             class="rounded-circle mb-3">
+
+                        <h4 class="mb-1">Arushi Chaturvedi</h4>
+                        <p class="text-muted mb-4">Student User</p>
+
+                        <div class="text-start">
+                            <p><strong>Email:</strong> arushi@example.com</p>
+                            <p><strong>Major:</strong> Computer Science</p>
+                            <p><strong>App Role:</strong> User</p>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                            <a href="../index.html" class="btn btn-secondary">Back</a>
+                            <a href="setting.html" class="btn btn-primary">Settings</a>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to log out?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="../index.html" class="btn btn-danger">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

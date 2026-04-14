@@ -10,15 +10,15 @@
 <body class="p-4">
 
     <!-- Navbar -->
-    <div id="navbar">
-        <script>
-            fetch("pages/navigation/navbar.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-            });
-        </script>
-    </div>
+    <div id="navbar"></div>
+
+    <script>
+    fetch("pages/navigation/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
 
     <!-- YOUR PART (small and clear) -->
     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -53,6 +53,15 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

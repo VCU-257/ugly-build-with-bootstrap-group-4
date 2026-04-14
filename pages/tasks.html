@@ -25,16 +25,15 @@
 </head>
 <body>
 
-    <div id="navbar"></div>
-    
-    <script>
-        // Nav bar
-        fetch("./navigation/navbar.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("navbar").innerHTML = data;
-            });
-    </script>
+  <div id="navbar"></div>
+
+<script>
+    fetch("./navigation/navbar.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+</script>
 
     <main class="container task-container">
         <div class="d-flex justify-content-between align-items-center mb-4">

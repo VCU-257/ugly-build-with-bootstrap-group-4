@@ -1,145 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Customization -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding-bottom: 2rem;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADHD Tracker - Add New Task</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
 
-        .form-input-gray { 
-            background-color: #e9ecef; 
-            border: none; 
-            height: 50px; 
-        }
+  <style>
+    :root {
+      --deep-sage: #4B6B54;
+      --dark-slate: #3E4E59;
+      --soft-dew: #F2F4F0;
+    }
 
-        .icon-box { 
-            width: 50px; 
-            height: 50px; 
-            background-color: #d3d3d3; 
-        }
+    body {
+      background-color: var(--soft-dew);
+      /* Background Color  */
+      font-family: 'Open Sans', sans-serif;
+      /* Body Font  */
+      padding-bottom: 2rem;
+    }
 
-       .btn-light-grey {
-            background-color: #bcbcbc !important; 
-            border: none !important;
-            color: #333 !important;
-        }
+    h2 {
+      font-family: 'Lexend', sans-serif;
+      /* Heading Font  */
+      color: var(--dark-slate);
+    }
 
-        .btn-light-grey:hover {
-            background-color: #a1a1a1 !important;
-            color: #000 !important;
-        }
+    .form-wrapper {
+      width: 100%;
+      margin: 3rem auto;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
 
-        .form-wrapper {
-            width: 100%;
-            margin: 3rem auto; 
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-        }
+    /* Custom Input Styling */
+    .form-input-custom {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      height: 50px;
+    }
 
-        @media (min-width: 768px) {
-            .form-wrapper {
-                max-width: 700px; 
-                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            }
-        }
-    </style>
+    .form-input-custom:focus {
+      border-color: var(--deep-sage);
+      box-shadow: 0 0 0 0.25 stealth rgba(75, 107, 84, 0.25);
+    }
+
+    /* Primary Button Styling  */
+    .btn-primary-custom {
+      background-color: var(--deep-sage) !important;
+      border: none !important;
+      color: #ffffff !important;
+    }
+
+    /* Secondary Button Styling  */
+    .btn-secondary-custom {
+      background-color: var(--dark-slate) !important;
+      border: none !important;
+      color: #ffffff !important;
+    }
+
+    .icon-box {
+      font-size: 2rem;
+      color: var(--deep-sage);
+    }
+
+    @media (min-width: 768px) {
+      .form-wrapper {
+        max-width: 700px;
+      }
+    }
+  </style>
 </head>
-<body>
 
-    <!-- Navbar -->
+<body>
+<!-- MAY NEED TO EDIT NAViGATION BAR -->
   <div id="navbar"></div>
 
-<script>
+  <script>
     fetch("./navigation/navbar.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("navbar").innerHTML = data;
-        });
-</script>
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
 
-    <div class="container">
-        <div class="form-wrapper">
-            <div class="d-flex align-items-center mb-4">
-                <div class="icon-box me-3 rounded"></div>
-                <h2 class="mb-0 fw-bold">ADD NEW TASK</h2>
-            </div>
-
-            <hr class="mb-5">
-
-            <!-- Task name form -->
-            <form id="taskForm" class="needs-validation" novalidate>
-                <div class="row">
-                    <div class="col-12 mb-4">
-                        <label class="form-label small fw-bold text-uppercase">Task Name:</label>
-                        <input type="text" class="form-control form-input-gray" placeholder="Enter task name" required>
-                    </div>
-                    
-                    <!-- Due date form -->
-                    <div class="col-md-6 mb-4">
-                        <label class="form-label small fw-bold text-uppercase">Due Date:</label>
-                        <input type="date" class="form-control form-input-gray" required>
-                    </div>
-                    
-                    <!-- Priorities -->
-                    <div class="col-md-6 mb-4">
-                        <label class="form-label small fw-bold text-uppercase">Priority</label>
-                        <select class="form-select form-input-gray" required>
-                            <option selected disabled value="">Select priority</option>
-                            <option value="1">Low</option>
-                            <option value="2">Medium</option>
-                            <option value="3">High</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Submit and cancel buttons -->
-                <div class="d-flex flex-column flex-md-row gap-3 mt-4">
-                    <button type="submit" class="btn btn-secondary px-5 py-3 fw-bold flex-grow-1">SUBMIT</button>
-                    <button type="button" class="btn btn-light-grey px-5 py-3 fw-bold flex-grow-1">CANCEL</button>
-                </div>
-            </form>
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="d-flex align-items-center mb-4">
+        <div class="icon-box me-3">
+          <i class="bi bi-pencil-square"></i>
         </div>
-    </div>
-<!-- Modal alert fixed -->
-    <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel"  aria-hidden="true"> 
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Please fill out all required fields correctly before submitting your task.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                </div>
-            </div>
+        <h2 class="mb-0 fw-bold text-uppercase">Add New Task</h2>
+      </div>
+
+      <hr class="mb-5">
+
+      <form id="taskForm" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-12 mb-4">
+            <label class="form-label small fw-bold text-uppercase">Task Name:</label>
+            <input type="text" class="form-control form-input-custom" 
+              required>
+            <div class="invalid-feedback">Please provide a task name.</div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <label class="form-label small fw-bold text-uppercase">Due Date:</label>
+            <input type="date" class="form-control form-input-custom" required>
+            <div class="invalid-feedback">Please select a date.</div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <label class="form-label small fw-bold text-uppercase">Priority</label>
+            <select class="form-select form-input-custom" required>
+              <option selected disabled value="">Select priority</option>
+              <option value="1">Low</option>
+              <option value="2">Medium</option>
+              <option value="3">High</option>
+            </select>
+            <div class="invalid-feedback">Please select a priority level.</div>
+          </div>
         </div>
+
+        <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+          <button type="submit" class="btn btn-primary-custom px-5 py-3 fw-bold flex-grow-1">
+            <i class="bi bi-check-circle-fill me-2"></i>SUBMIT </button>
+          <button type="button" onclick="window.location.href='tasks.html'"
+            class="btn btn-secondary-custom px-5 py-3 fw-bold flex-grow-1">CANCEL</button>
+        </div>
+      </form>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="modal fade" id="validationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title fw-bold">Missing Information</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          Please fill out all required fields correctly before submitting your task.
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary-custom" data-bs-dismiss="modal">Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        // Validation logic
-        const form = document.getElementById('taskForm');
-        const modal = new bootstrap.Modal(document.getElementById('validationModal'));
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        form.addEventListener('submit', function (event) {
-            // Check if the form is valid according to 'required' attributes
-            if (!form.checkValidity()) {
-                event.preventDefault(); // Prevents the form from submitting
-                event.stopPropagation();
-                modal.show(); // Shows the pop-up modal
-            }
-            
-            form.classList.add('was-validated');
-        }, false);
-    </script>
+  <script>
+    // Form Validation Logic 
+    const form = document.getElementById('taskForm');
+    const modal = new bootstrap.Modal(document.getElementById('validationModal'));
+
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        modal.show(); // Trigger Modal Interaction 
+      } else {
+        event.preventDefault();
+        alert("Task added successfully!"); 
+        window.location.href = 'tasks.html'; // Sends user to tasks.html page
+      }
+      form.classList.add('was-validated');
+    }, false);
+  </script>
 </body>
+
 </html>
